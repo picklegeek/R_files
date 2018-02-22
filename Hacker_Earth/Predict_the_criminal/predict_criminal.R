@@ -1,0 +1,1 @@
+criminal_data <- read.csv("criminal_train.csv")

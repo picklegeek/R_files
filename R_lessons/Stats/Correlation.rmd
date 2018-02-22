@@ -1,0 +1,21 @@
+---
+title: "Corelation"
+author: "picklehari"
+output:
+  html_document: default
+  pdf_document: default
+toc: yes
+---
+```{r setup, include = FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+Corelation tells the amount of linear relationship between variables
+A value of 1 indicates a straight linear relationship, 0 indicates a non linear one
+ ```{r}
+ library(ggplot2)
+ library(dplyr)
+ mtcars %>% group_by(gear) %>% summarize(N=n(), r = cor(mpg,wt))
+ ggplot(mtcars,aes(mpg,wt,color = factor(gear))) + geom_point()
+
+ ```
